@@ -1,0 +1,53 @@
+.light-controller {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .light-controller.on {
+    border-color: #4CAF50;
+  }
+  
+  .light-controller.off {
+    border-color: #f44336;
+  }
+  
+  .light-controller p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .light-controller p span {
+    font-weight: 700;
+    color: #000;
+  }
+  
+  .light-controller button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .light-controller button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #4CAF50;
+  }
+  
