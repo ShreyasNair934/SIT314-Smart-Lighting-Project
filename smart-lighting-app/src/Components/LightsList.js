@@ -23,33 +23,33 @@ function LightsList() {
   };
 
   const toggleLight = (id) => {
-    // Find the light that needs to be toggled
+    
     const lightToToggle = lights.find(light => light.light_id === id);
     
-    // Determine the new status
+  
     const newStatus = lightToToggle.status === 'on' ? 'off' : 'on';
     
-    // Send the toggle request to the server
+   
     axios.put(`http://34.238.235.170:3008/lights/${id}/toggle`, { status: newStatus })
       .then(response => {
         console.log('Toggle Response:', response);
-        // If successfully toggled on the server, update the local state
+        
         if (response.status === 200) {
-          // Update the status of the light in the local state
+         
           const updatedLights = lights.map(light =>
             light.light_id === id ? { ...light, status: newStatus } : light
           );
           setLights(updatedLights);
           
-          // Recalculate the counts of lights that are on and off
+         
           calculateLightsStatus(updatedLights);
         } else {
-          // Handle the error appropriately if the server response is not successful
+          
           console.error('Failed to toggle light', response);
         }
       })
       .catch(error => {
-        // Handle the error appropriately if the request fails
+       
         console.error('Failed to toggle light', error);
       });
   };
